@@ -1,0 +1,94 @@
+body{
+    
+    width: 100%;
+    background-color: antiquewhite;
+}
+.container{
+    margin-left: 20px;
+    margin-left: 3px;
+    
+}
+.row{
+    margin-bottom: 5px;
+
+}
+
+.custormDiv{
+   
+    min-height: 300px;
+    background-color: aquamarine;
+    font-size: medium; 
+    border: 2px solid yellowgreen;
+    
+}
+.nav-bar{
+    overflow: hidden;
+    position: fixed; /*   Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%;
+    background-color: bisque;
+    border: 2px solid black;
+    z-index: 1;
+}
+.nav-bar ul{
+    display: flex;
+    justify-content: flex-end;
+} 
+ .nav-bar li{
+    list-style: none;
+    display: inline-block;
+    padding-right: 20px;
+    margin-right: 5px;
+}
+.custormDiv{
+    margin-top: 8%;
+    height: 80%;
+    position: fixed;
+    top: 0;
+    overflow-y: scroll;
+}
+.custormDiv h3{
+    width: 25%;
+    text-align: center;
+    position: fixed;
+    margin: 0 auto;
+    background-color: aqua;
+
+}
+.custormDiv ul li{
+    list-style: none;
+    padding: 20px;
+    scroll-margin-top: 10px;
+    border-bottom: 1px solid rgba(0, 22, 22, 0.4);
+}
+
+.custormDiv1{
+    margin-top: 15%;
+}
+
+
+#contacts{
+    width: 100%;
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    /* padding: 20px; */
+    background-color: black;
+    border-bottom: 2px solid rgba(190, 5, 5, 0.986);
+    margin-top: 8%;
+    margin-bottom: 0px;
+}
+#contacts a{
+    text-decoration: none;
+}
+
+#contacts img{
+    display: inline-block;
+    width: 2%;
+    margin: 5px;
+    background: white;
+}
+ /* footer{
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     color: white;
+    background-color: black;
+ }  */
