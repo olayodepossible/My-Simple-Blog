@@ -4,26 +4,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Blog App</title>
-    <link href="bootstrap/bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="myblog.css">
 </head>
 <body>
     <div class="container">
-        <div class="row nav-row">
-            <nav class="nav-bar">
-                <h1>My Blog</h1>
-                <ul>
-                    <li> <a href="#home">Home</a> </li>
-                    <li> <a href="#about">About Us</a> </li>
-                    <li> <a href="#contacts">Contact Us</a> </li>
-                </ul>
-            </nav>
+
+        <div id="first-row" class="row ">
+            <h1>My Blog</h1>
+            <div class="nav-bar">
+                  
+                <nav class="nav">
+                    
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link" type="button" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" type="button" href="#contacts">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" type="button" data-toggle="modal" data-target="#modalLRForm" >Post</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                                <a class="nav-link" type="button" href="#">Membership</a>
+                            </li> -->
+
+                    </ul> 
+                         
+                </nav>
+            </div>
+            
         </div>
+<!-- Modal Login -->
+
+<!--Modal: Login / Register Form-->
+<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog cascading-modal" role="document">
+          <!--Content-->
+          <div class="modal-content">
+      
+            <!--Modal cascading tabs-->
+            <div class="modal-c-tabs">
+      
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
+                    Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
+                    Register</a>
+                </li>
+              </ul>
+      
+              <!-- Tab panels -->
+              <div class="tab-content">
+                <!--Panel 7-->
+                <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+      
+                  <!--Body-->
+                  <div class="modal-body mb-1">
+                    <div class="md-form form-sm mb-5">
+                      <i class="fas fa-envelope prefix"></i>
+                      <input type="email" id="loginMail" class="form-control form-control-sm validate" title="example@gmail.com" required>
+                      <label data-error="wrong" data-success="right" for="modalLRInput10">Your email</label>
+                    </div>
+      
+                    <div class="md-form form-sm mb-4">
+                      <i class="fas fa-lock prefix"></i>
+                      <input type="password" id="loginPwrd" class="form-control form-control-sm validate"  pattern="^[a-z0-9|\W]{5,15}$" required>
+                      <label data-error="wrong" data-success="right" for="modalLRInput11">Your password</label>
+                    </div>
+                    <div class="text-center mt-2">
+                      <button class="btn btn-info" id="loginBtn">Log in <i class="fas fa-sign-in ml-1"></i></button>
+                    </div>
+                  </div>
+                  <!--Footer-->
+                  <div class="modal-footer">
+                    <div class="options text-center text-md-right mt-1">
+                      <p>Not a member? <a href="#" class="blue-text">Sign Up</a></p>
+                      <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+                    </div>
+                    <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                  </div>
+      
+                </div>
+                <!--/.Panel 7-->
+      
+                <!--Panel 8-->
+                <div class="tab-pane fade" id="panel8" role="tabpanel">
+      
+                  <!--Body-->
+                  <div class="modal-body">
+                      <div class="md-form form-sm mb-5">
+                          <i class="fas fa-lock prefix"></i>
+                          <input type="text" id="fullname" class="form-control form-control-sm validate" required>
+                          <label data-error="wrong" data-success="right" for="modalLRInput13">Fullname</label>
+                      </div>
+
+                    <div class="md-form form-sm mb-5">
+                      <i class="fas fa-envelope prefix"></i>
+                      <input type="email" id="regEmail" class="form-control form-control-sm validate" title="example@gmail.com" required>
+                      <label data-error="wrong" data-success="right" for="modalLRInput12">Your email</label>
+                    </div>
+      
+                    <div class="md-form form-sm mb-5">
+                      <i class="fas fa-lock prefix"></i>
+                      <input type="password" id="regPwrd" class="form-control form-control-sm validate" pattern="^[a-z0-9|\W]{5,15}$" required>
+                      <label data-error="wrong" data-success="right" for="modalLRInput13">Your password</label>
+                    </div>
+      
+                    <div class="md-form form-sm mb-4">
+                      <i class="fas fa-lock prefix"></i>
+                      <input type="password" id="repeatPwrd" class="form-control form-control-sm validate" pattern="^[a-z0-9|\W]{5,15}$" required>
+                      <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>
+                    </div>
+      
+                    <div class="text-center form-sm mt-2">
+                      <button id="signUp" class="btn btn-info">Sign up <i class="fas fa-sign-in ml-1"></i></button>
+                    </div>
+      
+                  </div>
+                  <!--Footer-->
+                  <div class="modal-footer">
+                    <div class="options text-right">
+                      <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
+                    </div>
+                    <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+                <!--/.Panel 8-->
+              </div>
+      
+            </div>
+          </div>
+          <!--/.Content-->
+        </div>
+      </div>
+      <!--Modal: Login / Register Form-->
+      
+      <div class="text-center">
+        <a href="" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalLRForm">Launch
+          Modal LogIn/Register</a>
+      </div>
+<!-- second Row -->
 
         <div class="row">
-            <div class="col-md-4 col-xs-2">
+            <div class="col-md-4">
                 <div class="custormDiv">
-                    <h3>Latest Post</h3>
+                    <h3 class="positision-static">Latest Post</h3>
                     <ul>
                         <li >
                             <a href="#Introduction" class="nav-link"> Introduction</a>
@@ -34,63 +165,134 @@
                         <li>
                             <a href="#JavaScriptand Java" class="nav-link">JavaScriptand Java</a>
                         </li>
-                       
+                        <li>
+                    <a href="#JavaScriptand Java" class="nav-link">JavaScriptand Java</a>
+                </li>
+                <li>
+                    <a href="#Hello world" class="nav-link">Hello world</a>
+                </li>
+                <li>
+                    <a href="#Variables" class="nav-link">Variables</a>
+                </li>
+                <li>
+                    <a href="#Declaring variables" class="nav-link">Declaring variables</a>
+                </li>
+                <li>
+                    <a href="#Variable scope" class="nav-link">Variable scope</a>
+                </li>
+                <li>
+                    <a href="#Global variables" class="nav-link">Global variables</a>
+                </li>
+            </li>
+            <li>
+                <a href="#Hello world" class="nav-link">Hello world</a>
+            </li>
+            <li>
+                <a href="#Variables" class="nav-link">Variables</a>
+            </li>
+            <li>
+                <a href="#Declaring variables" class="nav-link">Declaring variables</a>
+            </li>
+            <li>
+                <a href="#Variable scope" class="nav-link">Variable scope</a>
+            </li>
+            <li>
+                <a href="#Global variables" class="nav-link">Global variables</a>
+            </li>
                     </ul>
                     
                 </div>
                 
             </div>
-            <div class="col-md-8 col-xs-8">
+            <div class="col-md-8">
                 <div class="custormDiv1">
                  <!-- content -->
-                    <section>
-                        <header>
-                                #Introduction
-                            <div class="postmeta">
-                                <time datetime="">December 31st, 1969</time>
-                                <a href="y#comments" class="comments">0 Comments</a>                                        
-                            </div>
-                        </header>
-                                           
-                        <aside class="comments" id="comments">
-                            <!-- comments -->
-                        </aside><!-- comments -->
+                 <div>
+                        <section>
+                                <header class="lead">
+                                      <h5 class="text-uppercase">Introduction</h5> 
+                                    <div class="postmeta">
+                                        <time datetime="">December 31st, 1969</time>
+                                                                               
+                                    </div>
+                                </header>
+                                                   
+                                <aside class="comments" id="comments">
+                                    <!-- comments -->
+                                </aside><!-- comments -->
+        
+                                <article>   
+                                    JavaScript and Java are similar in some ways but fundamentally different in some others. The JavaScript language resembles Java but does not have Java's static typing and strong type checking. JavaScript follows most Java expression syntax, naming conventions and basic control-flow constructs which was the reason why it was renamed from LiveScript to JavaScript. <br>
+                                    In contrast to Java's compile-time system of classes built by declarations, JavaScript supports a runtime system bsed on a small number of data types representing numeric, Boolean, and string values. JavaScript has a prototype-based object model inastead of the more common class-based object model. the prototype-based model provides dynamic inheritance; that is, what is inherited can vary for individual objects. JavaScript also supports functions without any special declarative requirments. Functions can be properties of  objects, executing as loosely typed methods. <br>
+                                    JavaScript is a very free-form language compared to Java. You do not have to declare all variables, classess,  and methods. You do not have to be concerned with whether methods are public, private, or protectd, and you do not have to implement interfaces. Variables, parameters, and function return types are not explicitly typed.
+                                            
+                                </article> <br>
+                                <div id="comment-group">
+                                    <a href="#comments" class="btn btn-info btn-sm ">Comment</a>
+                                    <input class="btn btn-primary btn-sm" type="button" value="Edit">
+                                    <input class="btn btn-primary btn-sm" type="button" value="Delete">
+                                </div>
+                        </section><br>
 
-                        <article>   
-                            JavaScript and Java are similar in some ways but fundamentally different in some others. The JavaScript language resembles Java but does not have Java's static typing and strong type checking. JavaScript follows most Java expression syntax, naming conventions and basic control-flow constructs which was the reason why it was renamed from LiveScript to JavaScript. <br>
-                            In contrast to Java's compile-time system of classes built by declarations, JavaScript supports a runtime system bsed on a small number of data types representing numeric, Boolean, and string values. JavaScript has a prototype-based object model inastead of the more common class-based object model. the prototype-based model provides dynamic inheritance; that is, what is inherited can vary for individual objects. JavaScript also supports functions without any special declarative requirments. Functions can be properties of  objects, executing as loosely typed methods. <br>
-                            JavaScript is a very free-form language compared to Java. You do not have to declare all variables, classess,  and methods. You do not have to be concerned with whether methods are public, private, or protectd, and you do not have to implement interfaces. Variables, parameters, and function return types are not explicitly typed.
+                        <section id="comments">
+              
+                          <form action="">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" placeholder="Name" id="comment-name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name">Email</label>
+                                <input type="email" class="form-control" placeholder="Email" id="comment-email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name">Your Comment</label>
+                                <textarea class="form-control" name="" id="comment-box" cols="30" rows="5" placeholder="Your comment - Max.500 character"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-info">submit</button>
+
+                            <button type="reset" class="btn btn-danger">Reset</button>
+                          </form>
+
+                        </section>
+        
+        
+                            <footer id="contacts">
                                     
-                        </article>
-                    </section>
+                                    <div id="image">
+                                        <a class="texDeco" href="https://facebook.com/akinfemiwa.abayomi.Possible" target="_blank">
+                                            <img src="https://iconsplace.com/wp-content/uploads/_icons/000000/64/png/facebook-2-icon-64.png" alt="facebook page">
+                                        </a>
+                        
+                                        <a class="texDeco" href="https://twitter.com/@Com__Possible" target="_blank">
+                                            <img src="https://iconsplace.com/wp-content/uploads/_icons/000000/64/png/twitter-2-icon-64.png" alt="twitter handle">
+                                        </a>
+                        
+                                        <a class="texDeco" href="">
+                                            <img src="https://iconsplace.com/wp-content/uploads/_icons/000000/64/png/gmail-login-icon-64.png" alt="My mail">
+                                        </a>
+                                    </div>
+                                    
+                    
+                                <!-- <blockquote>Contact us, and explore the wonders of information.... </blockquote> -->
+                                <span>Copyright &copy; 2019 Akinfemiwa's Blog</span>
+                            </footer>
+        
 
-
-                    <footer id="contacts">
-                            
-                            <div id="image">
-                                <a class="texDeco" href="https://facebook.com/akinfemiwa.abayomi.Possible" target="_blank">
-                                    <img src="https://iconsplace.com/wp-content/uploads/_icons/000000/64/png/facebook-2-icon-64.png" alt="facebook page">
-                                </a>
-                
-                                <a class="texDeco" href="https://twitter.com/@Com__Possible" target="_blank">
-                                    <img src="https://iconsplace.com/wp-content/uploads/_icons/000000/64/png/twitter-2-icon-64.png" alt="twitter handle">
-                                </a>
-                
-                                <a class="texDeco" href="">
-                                    <img src="https://iconsplace.com/wp-content/uploads/_icons/000000/64/png/gmail-login-icon-64.png" alt="My mail">
-                                </a>
-                            </div>
-                            
-            
-                        <!-- <blockquote>Contact us, and explore the wonders of information.... </blockquote> -->
-                        <span>Copyright &copy; 2019 Akinfemiwa's Blog</span>
-                    </footer>
+                  </div>
                 </div>
             </div>
             
         </div>
         
     </div>
+
+    <script src="jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     
+    <script src="bootstrap.js"></script>
+    <script src="myblog.js"></script>
 </body>
 </html>
