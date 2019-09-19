@@ -8,28 +8,41 @@ body{
     margin-left: 3px;
     
 }
+#first-row{
+    position: fixed;
+    width: 100%;
+    background-color: bisque;
+    
+    z-index: 1;
+}
 .row{
     margin-bottom: 5px;
-
 }
 
 .custormDiv{
-   
-    min-height: 300px;
+    margin-top: 10%;
+    height: 80%;
+    /* position: static;  */
+    top: 0;
+    /* overflow-y: scroll; */
     background-color: aquamarine;
     font-size: medium; 
     border: 2px solid yellowgreen;
     
 }
 .nav-bar{
+    display: inline-block;
+    justify-self: right;
     overflow: hidden;
-    position: fixed; /*   Set the navbar to fixed position */
+   /* position: fixed;    Set the navbar to fixed position */  
     top: 0; /* Position the navbar at the top of the page */
     width: 100%;
-    background-color: bisque;
     border: 2px solid black;
-    z-index: 1;
+    font-family: Arial;
+    
+
 }
+
 .nav-bar ul{
     display: flex;
     justify-content: flex-end;
@@ -40,15 +53,10 @@ body{
     padding-right: 20px;
     margin-right: 5px;
 }
-.custormDiv{
-    margin-top: 8%;
-    height: 80%;
-    position: fixed;
-    top: 0;
-    overflow-y: scroll;
-}
+
 .custormDiv h3{
-    width: 25%;
+    display: inline-block;
+    width: 25.5%;
     text-align: center;
     position: fixed;
     margin: 0 auto;
@@ -63,7 +71,13 @@ body{
 }
 
 .custormDiv1{
-    margin-top: 15%;
+    margin-top: 10%;
+    /* position: absolute;
+    left: 0; 
+    width: 100%;
+    /* top: 0; */
+    /* margin: 0px;
+     clear: both;  */
 }
 
 
@@ -87,8 +101,46 @@ body{
     margin: 5px;
     background: white;
 }
+@media screen and (max-width: 640px){
+    .custormDiv h3{
+        position: relative;
+        width: 100%;
+        top: 0;
+        padding: 0;
+        margin: 0;
+        
+    } 
+}
+
+ /* @media screen and (max-width: 640px){
+    .custormDiv .nav-bar{
+        position: absolute;
+        top: 0;
+        padding: 0;
+        margin: 0;
+        height: 50%;
+        width: 90%;
+        text-align: center;
+        overflow: scroll;
+        overflow-x: hidden;
+        background: white;
+        border-bottom: 2px solid;
+        margin-top: 30px;
+    } 
+    
+    .custormDiv1{
+        top: 60%; 
+        left: 0;
+        width: 100%;
+        overflow-x: hidden;
+        color: red;
+    }   */
  /* footer{
      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
      color: white;
     background-color: black;
  }  */
+
+
+
+
